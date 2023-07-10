@@ -9,7 +9,7 @@ export default function Login() {
     const [password, setPassword] = useState<string | undefined>();
     const router = useRouter();
 
-    async function singInWithEmail() {
+    async function SingInWithEmail() {
         try {
             if (email && password) {
                 const resp = await supabase.auth.signInWithPassword({
@@ -60,7 +60,7 @@ export default function Login() {
                 <button
                     type="button"
                     className="py-2 px-4 flex justify-center items-center  bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
-                    onClick={singInWithEmail}
+                    onClick={SingInWithEmail}
                 >
                     Login
                 </button>
