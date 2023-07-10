@@ -4,12 +4,12 @@ import { useRouter } from 'next/navigation'
 import { useState } from "react";
 import supabase from "../ultils/supabaseClient";
 
-export default function signUp() {
+export default function SignUp() {
     const [email, setEmail] = useState<string | undefined>();
     const [password, setPassword] = useState<string | undefined>();
     const router = useRouter();
 
-    async function singUpWithEmail() {
+    async function SingUpWithEmail() {
         try {
             if (email && password) {
                 const resp = await supabase.auth.signUp({
@@ -60,7 +60,7 @@ export default function signUp() {
                 <button
                     type="button"
                     className="py-2 px-4 flex justify-center items-center  bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
-                    onClick={singUpWithEmail}
+                    onClick={SingUpWithEmail}
                 >
                     Sign up
                 </button>
